@@ -7,8 +7,16 @@
   /* ### Neutral */
   --Dark-Grayish-Red-color: hsl(0, 6%, 24%);
   /* ### Gradients */
-  --Gradiente-Linear1: linear-gradient(135deg, hsl(0, 100%, 80%), hsl(0, 100%, 80%));
-  --Gradiente-Linear2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --Gradiente-Linear1: linear-gradient(
+    135deg,
+    hsl(0, 100%, 80%),
+    hsl(0, 100%, 80%)
+  );
+  --Gradiente-Linear2: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%)
+  );
   --White-color: white;
   font-family: "Josefin Sans", sans-serif;
   color: var(--Desaturated-Red-color);
@@ -30,7 +38,7 @@ body {
 .container {
   background-color: var(--White-color);
   width: 300px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 }
 .container__log {
   align-self: flex-start;
@@ -39,11 +47,10 @@ body {
 }
 
 .container__imgPortada {
-  
   width: 100%;
   height: 200px;
   background-image: url(/images/hero-mobile.jpg);
-  background-size:  contain;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 40px;
@@ -67,7 +74,7 @@ body {
 .email {
   display: flex;
   align-items: center;
-  
+
   width: 250px;
   margin: 20px;
   height: 40px;
@@ -82,43 +89,45 @@ body {
   margin-right: 8px;
   width: 70%;
   background-color: var(--White-color);
+  outline: none;
+  
 }
 .email__btn {
   width: 60px;
-  height: 40px;
-  background: var(--Very-Soft-Red-color);
+  height: 100%;
   border-radius: 20px;
+  border: none;
+  background: var(--Very-Soft-Red-color);
   margin-left: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform .5s ease, box-shadow .5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 .email__btn:hover {
   cursor: pointer;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.3);
-  transition: transform .5s ease, box-shadow .5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+#mensaje {
+  color: var(--Desaturated-Red-color);
+  display: none;
 }
 
 @media (width >= 600px) {
-  
   .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    "container__log container__imgPortada"
-    "container__titulo container__imgPortada"
-    "container__texto container__imgPortada"
-    "email container__imgPortada";
+    grid-template-areas:
+      "container__log container__imgPortada"
+      "container__titulo container__imgPortada"
+      "container__texto container__imgPortada"
+      "email container__imgPortada";
     width: 60%;
-    /* height: ; */
   }
-  
+
   .container__log {
     grid-area: container__log;
-    background-color: red;
     margin-left: 70px;
   }
   .container__imgPortada {
@@ -126,7 +135,6 @@ body {
     background-size: cover;
     grid-area: container__imgPortada;
     height: 100%;
-    
   }
   .container__titulo {
     grid-area: container__titulo;
@@ -142,6 +150,8 @@ body {
   .email {
     grid-area: email;
     margin-left: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-
 }
