@@ -131,7 +131,7 @@ body {
     margin-left: 70px;
   }
   .container__imgPortada {
-    background-image: url(images/hero-desktop.jpg);
+    background-image: url(images/hero-mobile.jpg);
     background-size: cover;
     grid-area: container__imgPortada;
     height: 100%;
